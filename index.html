@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stimmenzähler</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .member {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      font-size: 18px;
+    }
+
+    button {
+      padding: 6px 12px;
+      font-size: 16px;
+    }
+
+    #addBtn, #resetBtn {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Stimmenzähler</h1>
+
+  <div id="members"></div>
+
+  <button id="addBtn" onclick="addMember()">Mitglied hinzufügen</button>
+  <button id="resetBtn" onclick="resetVotes()">Alle Counter auf 0</button>
+
+  <script src="app.js"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
+</body>
+</html>
