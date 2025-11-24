@@ -6,35 +6,95 @@
   <title>Stimmenzähler</title>
 
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#1a1a1a">
 
   <style>
     body {
-      font-family: sans-serif;
+      margin: 0;
       padding: 20px;
-      max-width: 600px;
-      margin: auto;
+      background: #f5f5f5;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 25px;
+      color: #333;
     }
 
     .member {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr auto auto auto;
+      gap: 10px;
       align-items: center;
-      padding: 10px;
-      border-bottom: 1px solid #ccc;
-      font-size: 18px;
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 20px;
+    }
+
+    .count {
+      font-size: 24px;
+      font-weight: bold;
+      color: #007aff;
+      text-align: right;
+      min-width: 40px;
     }
 
     button {
-      padding: 6px 12px;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 14px;
       font-size: 16px;
+      background: #007aff;
+      color: white;
+      cursor: pointer;
     }
 
-    #addBtn, #resetBtn {
-      margin-top: 15px;
+    button:active {
+      transform: scale(0.97);
+      background: #005fcc;
+    }
+
+    .edit-btn {
+      background: #ff9500;
+    }
+
+    .edit-btn:active {
+      background: #d98200;
+    }
+
+    .delete-btn {
+      background: #ff3b30;
+    }
+
+    .delete-btn:active {
+      background: #d12a22;
+    }
+
+    .big-button {
       width: 100%;
-      padding: 10px;
-      font-size: 18px;
+      margin-top: 15px;
+      padding: 15px;
+      font-size: 20px;
+      border-radius: 14px;
+      background: #34c759;
+    }
+
+    .big-button:active {
+      background: #2fa94e;
+    }
+
+    #resetBtn {
+      background: #ff3b30;
+      margin-top: 10px;
+    }
+
+    #resetBtn:active {
+      background: #d12a22;
     }
   </style>
 </head>
@@ -44,8 +104,8 @@
 
   <div id="members"></div>
 
-  <button id="addBtn" onclick="addMember()">Mitglied hinzufügen</button>
-  <button id="resetBtn" onclick="resetVotes()">Alle Counter auf 0</button>
+  <button class="big-button" onclick="addMember()">Mitglied hinzufügen</button>
+  <button id="resetBtn" class="big-button" onclick="resetVotes()">Alle Counter auf 0</button>
 
   <script src="app.js"></script>
 

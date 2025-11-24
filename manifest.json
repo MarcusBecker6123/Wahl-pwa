@@ -3,7 +3,7 @@
   "short_name": "Wahl",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "background_color": "#f5f5f5",
+  "theme_color": "#1a1a1a",
   "icons": []
 }
